@@ -8,11 +8,9 @@ const store = configureStore();
 export default React.createClass({
   render() {
     return (
-      <div>
         <Provider store={store}>
           <App />
         </Provider>
-      </div>
     );
   }
 });

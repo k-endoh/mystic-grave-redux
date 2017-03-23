@@ -1,7 +1,3 @@
-/**
- * Created by katsuya on 2017/03/23.
- */
-
 import React from 'react';
 
 import 'aframe';
@@ -14,6 +10,9 @@ import Camera from './Camera';
 
 import io from 'socket.io-client';
 export const socket = io('http://localhost:8000');
+
+const BOX_SIZE = 1;
+const STAGE_SIZE = 16;
 
 class Stage extends React.Component {
 
@@ -32,7 +31,7 @@ class Stage extends React.Component {
     return(
       <Scene>
 
-        {console.log(this.props.data)}
+        {/* 壁の配置 */}
         {
           this.props.data.map((object, z) => {
           return this.props.data[z].map((object, x) => {
@@ -40,11 +39,9 @@ class Stage extends React.Component {
               return <Entity
                 geometry={{primitive: 'box'}}
                 material="color: #323232"
-                position={[0.5 + x - 8, 0.5, 0.5 + z - 8]}
-                scale={[1, 1, 1]}
+                position={[BOX_SIZE/2 + x - STAGE_SIZE/2, BOX_SIZE/2, BOX_SIZE/2 + z - STAGE_SIZE/2]}
+                scale={[BOX_SIZE, BOX_SIZE, BOX_SIZE]}
               />;
-            }else{
-              return <Entity/>
             }
           });
         }) }
@@ -89,8 +86,6 @@ class Stage extends React.Component {
 
         {/* ゴールおばけ */}
         <GoalGhost/>
-
-        <Entity text={{value: 'HELLO WORLD', color: 'black'}} position={[0, 1, -5]} scale={[10, 10, 1]}/>
       </Scene>
     )
   }
