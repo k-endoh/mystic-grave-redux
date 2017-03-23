@@ -2,7 +2,7 @@ import React from 'react';
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as CommentActions from '../actions/CommentActions';
+import * as StageActions from '../actions/StageActions';
 import Stage from './Stage';
 
 class App extends React.Component {
@@ -13,7 +13,7 @@ class App extends React.Component {
 
   render() {
     const {dispatch, data} = this.props;
-    const actions = bindActionCreators(CommentActions, dispatch);
+    const actions = bindActionCreators(StageActions, dispatch);
 
     return (
         <Stage actions={actions} data={data}/>
@@ -26,4 +26,4 @@ App.propTypes = {
   data: React.PropTypes.array.isRequired
 };
 
-export default connect(state => state.Comment)(App);
+export default connect(state => state.Stage)(App);
