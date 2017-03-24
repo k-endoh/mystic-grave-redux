@@ -23,7 +23,7 @@ const initial_maze_data = {
 
 export default function(state = initial_maze_data, action) {
   switch (action.type) {
-    case ActionTypes.MAZE_UPDATE:
+    case ActionTypes.SERVER_MAZE_UPDATE:
       return action;
     default:
       return state;

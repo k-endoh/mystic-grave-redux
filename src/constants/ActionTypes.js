@@ -1,1 +1,1 @@
-export const MAZE_UPDATE = 'MAZE_DATE';
+export const SERVER_MAZE_UPDATE = 'SERVER_MAZE_UPDATE';

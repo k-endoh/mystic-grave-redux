@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes';
 
 export function mazeUpdate(data) {
   return {
-    type: ActionTypes.MAZE_UPDATE,
+    type: ActionTypes.SERVER_MAZE_UPDATE,
     data
   };
 }
