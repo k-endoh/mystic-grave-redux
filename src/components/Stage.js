@@ -9,7 +9,10 @@ import Field from './Field';
 import Camera from './Camera';
 
 import io from 'socket.io-client';
-export const socket = io('http://localhost:8000');
+
+
+let serverData = require('../config/server_config.json');
+export const socket = io(serverData.server.address);
 
 const BOX_SIZE = 1;
 const STAGE_SIZE = 16;
