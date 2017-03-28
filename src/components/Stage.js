@@ -23,7 +23,8 @@ class Stage extends React.Component {
     const {actions} = this.props;
     socket.on('maze_update', function (data) {
       actions.mazeUpdate(data);
-    })
+      console.log('maze_update');
+    });
   }
 
   constructor(props){
